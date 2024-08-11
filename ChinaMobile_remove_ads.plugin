@@ -1,0 +1,23 @@
+#!name= 中国移动去广告
+#!desc= 这是一个带有配置项的插件，input代表输入，select代表选择（select的第一项为名称，后面为可选值），用户所填或者选择的值都可以在脚本中用$persistentStore.read进行读取，如$persistentStore.read(appName)
+#!author= ZipDot
+#!homepage= 插件首页，可在插件页面进行跳转
+#!icon= 插件的图标
+#!input = 中国移动
+#!input = author
+#!select = appType,tool,social,health,sport
+#!select = price,0.99,1.99,4.99
+#!system = iOS
+#!system_version = 17
+#!loon_version = 3.2.1(372)
+#!tag = 去广告,中国移动
+
+[rule]
+
+[rewrite]
+
+# 中国移动 //client.app.coc.10086.cn
+http-response ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) script-path=reject-dict, requires-body=false
+
+[mitm]
+hostname = client.app.coc.10086.cn
