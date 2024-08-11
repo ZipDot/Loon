@@ -9,8 +9,8 @@
 #!tag= 去广告,中国移动
 
 [rewrite]
-# 拦截并阻止广告图片加载
-url reject-img ^https:\/\/res\.app\.coc\.10086\.cn\/qwhdcdn_cmcc-cs_cn\/prd-mgcenter\/.+\.jpg
+# 拦截并阻止所有广告图片加载
+url reject-img ^https:\/\/res\.app\.coc\.10086\.cn\/qwhdcdn_cmcc-cs_cn\/prd-mgcenter\/.*\.jpg(\?.*)?$
 
 [mitm]
 hostname = res.app.coc.10086.cn
