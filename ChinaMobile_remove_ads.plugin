@@ -10,7 +10,8 @@
 
 [rewrite]
 # 拦截并阻止所有广告图片加载
-url reject-img ^https:\/\/res\.app\.coc\.10086\.cn\/qwhdcdn_cmcc-cs_cn\/prd-mgcenter\/.*\.jpg(\?.*)?$
+# 拦截指定路径下的.jpg图片
+^https://res\.app\.coc\.10086\.cn/qwhdcdn_cmcc-cs_cn/prd-mgcenter/.*\.jpg reject-dict
 
 [mitm]
 hostname = res.app.coc.10086.cn
